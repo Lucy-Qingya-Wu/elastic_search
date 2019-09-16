@@ -75,7 +75,7 @@ result shown below:
 }
 ```
 
-curl -XPOST "localhost:9200/shakespeare/_bulk?pretty" -H 'Content-Type: application/json' --data-binary @test.json
+BULK ADD: curl -XPOST "localhost:9200/shakespeare/_bulk?pretty" -H 'Content-Type: application/json' --data-binary @test.json
 ```save contents in the following format in a file, in this case, the file is called test.json
 {"index":{"_index":"shakespeare_line","_type":"line","_id":10}}
 {"line_id":142,"play_name":"Henry IV","speech_number":7,"line_number":"1.2.28","speaker":"FALSTAFF","text_entry":"being governed, as the sea is, by our noble and"}
@@ -392,4 +392,4 @@ GET: http://localhost:9200/inspections/_analyze
 }
 ```
 8. How does search work based on different type? 
-9. The query in syntax section, which is for sort based on geo distance with the coordinates, can only bulk edit 3 items at a time. WHY?
+
