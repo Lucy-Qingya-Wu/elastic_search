@@ -194,15 +194,16 @@ PUT: http://localhost:9200/inspections/doc/_mapping
         }
     }
 }
-POST: http://localhost:9200/inspections/_bulk
-{ "index" : { "_id" : 1, "_type":"doc"}}
+BULK ADD: curl -XPOST "localhost:9200/inspections/_bulk?pretty" -H 'Content-Type: application/json' --data-binary @test.json
+{ "index" : { "_index": "inspections", "_id" : 1, "_type":"doc"}}
 { "business_address": "999 Lucy St", "inspection_score": 1, "business_location": {"type":"point","coordinates": [-122.481299, 34.547228]}}
-{ "index" : { "_id" : 2, "_type":"doc"}}
+{ "index" : { "_index": "inspections", "_id" : 2, "_type":"doc"}}
 { "business_address": "1818 Lucy St", "inspection_score": 2, "business_location": {"type":"point","coordinates": [-122.481299, 36.547228]}}
-{ "index" : { "_id" : 3, "_type":"doc"}}
+{ "index" : { "_index": "inspections", "_id" : 3, "_type":"doc"}}
 { "business_address": "999 Lucy St", "inspection_score": 3, "business_location": {"type":"point","coordinates": [-122.481299, 38.547228]}}
-{ "index" : { "_id" : 4, "_type":"doc"}}
+{ "index" : { "_index": "inspections", "_id" : 4, "_type":"doc"}}
 { "business_address": "1818 Lucy St", "inspection_score": 4, "business_location": {"type":"point","coordinates": [-122.481299, 40.547228]}}
+
 GET: http://localhost:9200/inspections/_search
 {
 	"query": {
