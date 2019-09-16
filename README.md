@@ -19,6 +19,10 @@ docker run -p 9200:9200 -e "discovery.type=single-node" -e "xpack.security.enabl
 ```
 docker ps -aq
 ```
+#### List all running containers (only IDs): 
+```
+docker ps 
+```
 #### Stop all running containers: 
 ```
 docker stop $(docker ps -aq)
