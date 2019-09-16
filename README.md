@@ -157,7 +157,7 @@ GET: http://localhost:9200/inspections/_search (ranges key 0-2 means from 0 up t
 ```
 
 
-Sort based on geo distance with the coordinates 
+Sort based on geo distance with the coordinates (NOT WORKING IN 7)
 ```json
 DELETE: http://localhost:9200/inspections
 PUT: http://localhost:9200/inspections
