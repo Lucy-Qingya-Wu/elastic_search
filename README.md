@@ -161,7 +161,7 @@ Sort based on geo distance with the coordinates
 ```json
 DELETE: http://localhost:9200/inspections
 PUT: http://localhost:9200/inspections
-PUT: http://localhost:9200/inspections/doc/_mapping
+PUT: http://localhost:9200/inspections/_mapping
 {
     "properties": {
         "business_address": {
