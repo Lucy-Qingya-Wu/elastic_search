@@ -91,8 +91,11 @@ result shown below:
 
 BULK ADD: curl -XPOST "localhost:9200/shakespeare/_bulk?pretty" -H 'Content-Type: application/json' --data-binary @test.json
 ```save contents in the following format in a file, in this case, the file is called test.json
-{"index":{"_index":"shakespeare_line","_type":"line","_id":10}}
-{"line_id":142,"play_name":"Henry IV","speech_number":7,"line_number":"1.2.28","speaker":"FALSTAFF","text_entry":"being governed, as the sea is, by our noble and"}
+{"index":{"_index":"ontario_rental","_type":"line", "_id": "1"}}
+{"bedroom_count":2, "bathroom_count":2, "den_count":0,"address": "10 York Street, Toronto, ON, M5J 0E1", "lat": "43.581639", "long": "79.648193", "price": 1111, "region": "mississauga"}
+{"index":{"_index":"ontario_rental","_type":"line", "_id": "2"}}
+{"bedroom_count":2, "bathroom_count":2, "den_count":0,"address": "10 York Street, Toronto, ON, M5J 0E1", "lat": "43.581639", "long": "79.648193", "price": 2222, "region": "mississauga"}
+
 ```
 
 GET: http://localhost:9200/inspections/_search
