@@ -374,37 +374,4 @@ GET: http://localhost:9200/inspections/_analyze
         ```
     * When ES detects a new string field in your documents, it automatically configures it as a full-text string field and analyzes it with the standard analyzer. If you do not want this to happen, you need to specify the mapping manually.
 9. How does mapping work?
-6. How is data stored?
-5. Why is ES better than MongoDB?
-6. How is score calculated?
-7. What does "keyword" type mean and "text" type mean?
-```json
-{
-    "inspections": {
-        "mappings": {
-            "dock": {
-                "properties": {
-                    "business_location": {
-                        "properties": {
-                            "coordinates": {
-                                "type": "long"
-                            },
-                            "type": {
-                                "type": "text",
-                                "fields": {
-                                    "keyword": {
-                                        "type": "keyword",
-                                        "ignore_above": 256
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-```
-8. How does search work based on different type? 
-
+10. Why is ES better than MongoDB?
