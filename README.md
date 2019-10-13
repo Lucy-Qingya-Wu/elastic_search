@@ -13,17 +13,31 @@ docker image ls
 ```
 #### Run ES in development mode
 ```
-docker run -p 9200:9200 -e "discovery.type=single-node" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:5.5.3
+docker run                        \
+  --name elasticsearch_container  \
+  -p 9200:9200                    \
+  -p 9300:9300                    \
+  -e "discovery.type=single-node" \
+  docker.elastic.co/elasticsearch/elasticsearch:6.2.2
+```
+#### Run Kibana 
+```
+docker run \
+  --name kibana \
+  -p 5601:5601 \
+  --link elasticsearch_container:elasticsearch_alias \
+  -e "ELASTICSEARCH_URL=http://elasticsearch_alias:9200" \
+  docker.elastic.co/kibana/kibana:6.2.22
 ```
 #### List all containers (only IDs): 
 ```
 docker ps -aq
 ```
-#### List all running containers (only IDs): 
+#### List all running containers: 
 ```
 docker ps 
 ```
-#### Stop all running containers: 
+#### Stop all containers: 
 ```
 docker stop $(docker ps -aq)
 ```
