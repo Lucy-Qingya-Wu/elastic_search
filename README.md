@@ -27,7 +27,7 @@ docker run \
   -p 5601:5601 \
   --link elasticsearch_container:elasticsearch_alias \
   -e "ELASTICSEARCH_URL=http://elasticsearch_alias:9200" \
-  docker.elastic.co/kibana/kibana:6.2.22
+  docker.elastic.co/kibana/kibana:6.2.2
 ```
 #### List all containers (only IDs): 
 ```
